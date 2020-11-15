@@ -1,40 +1,26 @@
 import React from "react"
 
 class Counter extends React.Component{
-    constructor(props){
-        super(props)
-
-        this.state = {
-            counter: 0
-        }
-
-        this.addCounter = this.addCounter.bind(this)
-        this.subtractCounter = this.subtractCounter.bind(this)
-        this.resetCounter = this.resetCounter.bind(this)
+    state = {
+        counter: 0
     }
 
-    addCounter(){
-        this.setState(function(state){
-            return {
+    addCounter = () => {
+        this.setState((state)=>({
                 counter: state.counter +1
-            }
-        })
+        }))
     }
 
-    subtractCounter(){
-        this.setState(function(state){
-            return {
+    subtractCounter = () => {
+        this.setState((state)=>({
                 counter: state.counter -1
-            }
-        })
+        }))
     }
 
-    resetCounter(){
-        this.setState(function(state){
-            return {
+    resetCounter = () => {
+        this.setState(()=>({
                 counter : 0
-            }
-        })
+            }))
     }
     render(){
         return <div>
